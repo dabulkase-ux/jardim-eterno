@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#101b1a" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23132e2c'/%3E%3Cpath d='M16 28V14' stroke='%238fa77a' stroke-width='2'/%3E%3Cpath d='M9 7Q16 13 23 7V13Q16 26 9 13Z' fill='%23dba38c'/%3E%3C/svg%3E"
+    />
+    <title>Um pequeno programa para você</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="experience" aria-label="Um jardim que cabe em um programa">
+      <div id="screen-layer">
+        <canvas id="garden" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <header id="scene-header" class="hidden">
+        <span class="eyebrow" id="chapter">ESTUDO BOTÂNICO / 001</span>
+        <h1 id="scene-title">Um pequeno jardim.</h1>
+        <p id="scene-subtitle">feito de coisas que crescem devagar.</p>
+      </header>
+      <div id="targets" aria-label="Flores do jardim"></div>
+      <div
+        id="caption"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+      <div id="hint" class="hidden">
+        algumas coisas respondem ao toque<span class="hint-line"></span>
+      </div>
+      <div id="veil" aria-hidden="true"></div>
+      <section id="terminal" aria-label="Terminal do jardim">
+        <div class="terminal-top">
+          <span class="terminal-dot"></span> garden.exe
+          <span class="terminal-version">personal build / 01</span>
+        </div>
+        <div id="terminal-lines" role="log" aria-live="off"></div>
+        <div id="progress"><span></span></div>
+        <div class="terminal-bottom">
+          <span id="progress-label">preparing environment</span
+          ><span id="percentage">0%</span>
+        </div>
+        <span class="cursor" aria-hidden="true">▍</span>
+      </section>
+      <button
+        id="cord"
+        class="hidden"
+        aria-label="Puxar interruptor para acender a luz"
+      >
+        <svg width="60" height="230" viewBox="0 0 60 230" aria-hidden="true">
+          <path id="cord-line" d="M30 0 Q27 95 30 183" />
+          <g id="cord-handle">
+            <rect x="24" y="180" width="12" height="32" rx="6" />
+            <path d="M26 187h8 M26 192h8 M26 197h8" />
+          </g>
+        </svg>
+      </button>
+      <button id="sound" aria-label="Ativar som" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 9h4l5-4v14l-5-4H4z" />
+          <path id="sound-waves" d="m17 9 5 6m0-6-5 6" /></svg
+        ><span>som desligado</span>
+      </button>
+      <div id="field-notes" class="hidden">
+        <span class="small-dot"></span>
+        <span id="notes-count">um lugar para ficar um pouco</span>
+      </div>
+      <button id="end" class="hidden">[ terminar programa ]</button>
+      <section id="file" class="file-window hidden" aria-labelledby="file-title">
+        <div class="file-bar">
+          <span id="file-title">para_ela.txt</span><span>UTF-8</span>
+        </div>
+        <div id="file-scroll" class="file-scroll" tabindex="0">
+          <p id="final-message"></p>
+        </div>
+        <button id="file-close" class="file-close">[ fechar arquivo ]</button>
+      </section>
+      </div>
+      <div id="crt-effect" class="hidden" aria-hidden="true"><span></span></div>
+      <section id="epilogue" class="hidden" aria-label="Uma última descoberta">
+        <div id="hesitation" aria-hidden="true"></div>
+        <svg
+          id="botanical-art"
+          viewBox="0 0 400 760"
+          preserveAspectRatio="xMidYMax meet"
+          aria-hidden="true"
+        >
+          <defs>
+            <radialGradient id="lily-glow">
+              <stop offset="0" stop-color="#d9c79a" stop-opacity=".15" />
+              <stop offset="1" stop-color="#d9c79a" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="lily-petal-fill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f0e5c9" />
+              <stop offset=".53" stop-color="#d9cbb0" />
+              <stop offset="1" stop-color="#a99d81" />
+            </linearGradient>
+            <linearGradient id="lily-leaf-fill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#73866b" />
+              <stop offset="1" stop-color="#31493b" />
+            </linearGradient>
+          </defs>
+          <ellipse class="lily-halo" cx="203" cy="242" rx="138" ry="165" fill="url(#lily-glow)" />
+          <path
+            class="lily-stem"
+            d="M201 687 C197 624 210 576 199 519 C188 462 204 403 201 345 C199 303 205 269 203 226"
+          />
+          <path class="lily-sprout" d="M201 689 C185 681 187 666 198 658 C202 670 205 680 201 689Z" />
+          <path
+            class="lily-bud"
+            d="M203 235 C183 218 185 187 203 164 C221 187 223 218 203 235Z"
+          />
+          <path
+            class="lily-leaf leaf-left"
+            d="M199 542 C174 527 126 514 96 478 C142 478 181 492 202 526 C174 520 139 507 115 490"
+          />
+          <path
+            class="lily-leaf leaf-right"
+            d="M201 474 C226 458 265 439 294 401 C249 409 217 426 198 459 C225 447 255 430 276 414"
+          />
+          <path
+            class="lily-leaf leaf-upper"
+            d="M201 397 C180 384 156 360 147 332 C177 344 196 362 204 389 C183 373 169 357 159 342"
+          />
+          <g class="lily-sepals">
+            <path d="M203 232 C184 211 160 184 155 151 C184 166 199 194 203 232Z" />
+            <path d="M203 232 C222 211 246 184 251 151 C222 166 207 194 203 232Z" />
+            <path d="M203 232 C197 204 196 170 203 143 C211 171 210 204 203 232Z" />
+          </g>
+          <g class="lily-petals">
+            <g transform="rotate(0 203 232)"><path class="lily-petal petal-a" d="M203 232 C187 201 150 166 153 121 C185 140 205 182 203 232Z" /></g>
+            <g transform="rotate(60 203 232)"><path class="lily-petal petal-b" d="M203 232 C187 201 150 166 153 121 C185 140 205 182 203 232Z" /></g>
+            <g transform="rotate(120 203 232)"><path class="lily-petal petal-c" d="M203 232 C187 201 150 166 153 121 C185 140 205 182 203 232Z" /></g>
+            <g transform="rotate(180 203 232)"><path class="lily-petal petal-d" d="M203 232 C187 201 150 166 153 121 C185 140 205 182 203 232Z" /></g>
+            <g transform="rotate(240 203 232)"><path class="lily-petal petal-e" d="M203 232 C187 201 150 166 153 121 C185 140 205 182 203 232Z" /></g>
+            <g transform="rotate(300 203 232)"><path class="lily-petal petal-f" d="M203 232 C187 201 150 166 153 121 C185 140 205 182 203 232Z" /></g>
+          </g>
+          <g class="lily-stamens">
+            <path d="M203 231 Q185 184 173 160" />
+            <path d="M203 231 Q195 179 193 151" />
+            <path d="M203 231 Q207 179 214 151" />
+            <path d="M203 231 Q222 184 234 161" />
+            <ellipse cx="173" cy="160" rx="4" ry="8" />
+            <ellipse cx="193" cy="151" rx="4" ry="8" />
+            <ellipse cx="214" cy="151" rx="4" ry="8" />
+            <ellipse cx="234" cy="161" rx="4" ry="8" />
+          </g>
+          <g class="lily-roots">
+            <path class="root-left root-a" d="M201 682 C173 693 157 716 123 728 C106 735 91 735 76 747" />
+            <path class="root-left root-b" d="M199 685 C177 710 174 733 151 750" />
+            <path class="root-left root-c" d="M199 690 C161 697 142 706 128 721" />
+            <path class="root-right root-d" d="M202 682 C228 694 249 714 281 724 C298 730 317 731 333 745" />
+            <path class="root-right root-e" d="M204 686 C227 708 230 733 252 750" />
+            <path class="root-right root-f" d="M205 690 C242 698 261 704 278 719" />
+          </g>
+        </svg>
+        <button id="hidden-folder" class="hidden" type="button" aria-label="Pasta guardada entre as raízes" aria-controls="folder-contents" aria-expanded="false">
+          <svg viewBox="0 0 88 68" aria-hidden="true">
+            <path class="folder-back" d="M9 17h27l7 8h37v34H9z" />
+            <path class="folder-paper" d="M18 25h48v27H18z" />
+            <path class="folder-front" d="M9 29h70l-5 31H14z" />
+            <path class="folder-flap" d="M9 29h70l-2 11H11z" />
+            <path class="folder-line" d="M19 51h49" />
+          </svg>
+        </button>
+        <div id="folder-contents" class="hidden" role="group" aria-label="Conteúdo da pasta">
+          <button id="open-declaration" type="button">ainda_tem_uma_coisa.txt</button>
+        </div>
+        <section id="declaration-file" class="file-window hidden" aria-labelledby="declaration-file-title">
+          <div class="file-bar">
+            <span id="declaration-file-title">ainda_tem_uma_coisa.txt</span><span>UTF-8</span>
+          </div>
+          <div id="declaration-scroll" class="file-scroll" tabindex="0">
+            <p id="declaration-message"></p>
+          </div>
+          <button id="declaration-close" class="file-close">[ fechar ]</button>
+        </section>
+      </section>
+    </main>
+    <noscript
+      >Este pequeno jardim precisa de JavaScript para crescer. Ative-o no
+      navegador para explorar.</noscript
+    >
+    <script src="config.js"></script>
+    <script src="audio.js"></script>
+    <script src="garden.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

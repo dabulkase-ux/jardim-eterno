@@ -1,0 +1,10 @@
+{
+  "name": "um-pequeno-jardim",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Uma experiência botânica interativa, feita para alguém.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node tests/experience.cjs"
+  }
+}
